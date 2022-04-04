@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
 
     public AudioClip ac_jump;
     public AudioClip ac_ex;
-    private AudioSource as_player;
+    public AudioSource as_player;
     #endregion
     void Start()
     {
@@ -46,9 +46,9 @@ public class PlayerController : MonoBehaviour
             print("遊戲結束！");  //在 #Console 視窗顯示 "遊戲結束"
             playAn.SetBool("Death_b", true);
             playAn.SetInteger("DethType_int", 1);
+            as_player.PlayOneShot(ac_ex);
             ps_ex.Play();
             ps_dirty.Stop();
-            as_player.PlayOneShot(ac_ex, 1.0f);
         } 
     }
 
@@ -59,8 +59,8 @@ public class PlayerController : MonoBehaviour
             playerRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             isOnground = false;
             playAn.SetTrigger("Jump_trig");
+            as_player.PlayOneShot(ac_jump);
             ps_dirty.Stop();
-            as_player.PlayOneShot(ac_jump, 1.0f);
         }
         if (!isOnground)
         {
