@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/SimpleFX/_Demo/Demo.unity
+- path: Assets/Scenes/Prototype 3_KG_class_20220314.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
